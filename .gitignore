@@ -1,0 +1,11 @@
+.DS_Store
+**/.DS_Store
+.vscode
+**/.vscode
+results
+**/results
+obj
+**/obj
+keep_results
+**/keep_results
+keep_results.zip
