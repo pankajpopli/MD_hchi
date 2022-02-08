@@ -56,11 +56,13 @@ int main(){
       f2 = fopen("log","a");
       fprintf(f2,"#step\tTemp\tKE\tPE\tTE\tX/N\n");
       printf(GRN"\n doing MD simulation (N=%d, V=%lf, T=%lf) Total steps = %d with printf freq = %d \n\n"RESET,totalN,lbox_x*lbox_y,red_T,nsteps,printFreq);
+      printf(YEL"final hchi_0 = %lf, plot change time = %d\n\n"RESET, (nsteps/h_step_intrvl)*h_step,h_step_intrvl/printFreq);
    //-------------------real thing start here--------------------------------------------->>
       // initializer.c file setsup everything for rect. lattice, hchi_force, nbrs_list, etc
       // we modify only the initial positions of the particles to triangular lattice below.
       int n1,n2,nx,ny,pair_id;
       double ac,rhoc;
+      FILE *f_tring_eq;
          nx = 2*part_id + 2;
          ny = nx;
          rhoc		=	sqrt(((sqrt(3.0))*red_rho)/2.0); 
@@ -75,6 +77,14 @@ int main(){
                }
             }
          }
+         // f_tring_eq = fopen("../lib/f_tring_eq.dat", "r");
+         // for(n1=0;n1<nx;n1++){
+         //    for(n2=0;n2<ny;n2++){
+         //       pair_id = (n1 + nx*n2);
+         //       fscanf(f_tring_eq, "%*d\t%lf\t%lf\t%lf\n",  &p[pair_id].ri[0],&p[pair_id].ri[1],&p[pair_id].chi);
+         //    }
+         // }fclose(f_tring_eq);
+
       //-------------------noise standard deiation and integrator params------------------>>
          stdDev = sqrt(2.0*damp*K_B*red_T*deltat);
          smallb = (1.0/(1.0 +  ((damp*deltat)/(2.0*mass))));
@@ -88,12 +98,14 @@ int main(){
                
             // increase hchi_0 at every 10000 sim steps
             // therefore in data files, hchi_0 will increase at each 100th  step
-            if(i%10000==0){
-               hchi_0 += 0.02;
-               // if(hchi_counter==0){
-               //    hchi_counter=1;
-               // }
-            }
+               if(i<(500000)){
+                  if(i%h_step_intrvl==0){
+                     hchi_0 += h_step;
+                     // if(hchi_counter==0){
+                     //    hchi_counter=1;
+                     // }
+                  }
+               }
             //-------------------set openMP for speed--------------------------------------->>
                //omp_set_dynamic(0);
                //omp_set_num_threads(thread_num);
@@ -149,7 +161,7 @@ int main(){
                      fclose(f1);
                   //-------------------print log on screen------------------------------------------>>
                   if(strcmp(print_config,"yes")==0){
-                     printf("Itr No\t Potential E\t Kinetic E\t Total E\t  X global\n\033[K %d\t% .8lf\t% .8lf\t% .8lf\t% .8lf\033[A\r",i/printFreq, pe,ke,pe+ke,globalX);
+                     printf("Itr No\t Potential E\t Kinetic E\t Total E\t  X global\t  h_chi_0\n\033[K %d\t% .8lf\t% .8lf\t% .8lf\t% .8lf\t% .6lf\033[A\r",i/printFreq, pe,ke,pe+ke,globalX,hchi_0);
                   }
                }
             //-----------------------------------------------------------------------------------------

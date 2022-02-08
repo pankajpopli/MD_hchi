@@ -75,7 +75,8 @@ extern double  cutoff;
 extern double  cutoff_pot;
 extern double  hchi_0;
 extern double  hchi_mean;
-extern double  hchi_width; 
+extern double  hchi_width;
+extern double  h_step;
 extern double  k1;
 extern double  k2;
 extern double  epsilon;
@@ -85,6 +86,7 @@ extern int		nsteps;
 extern int		printFreq;
 extern int 		part_id;
 extern int 		totalN; /// ((2*part_id)^2 + 2) 
+extern int     h_step_intrvl;
 extern char 	print_config[50];
 extern char    pot_type[50];
 extern double  rho,a,lbox_x,lbox_y,Ymat[4];

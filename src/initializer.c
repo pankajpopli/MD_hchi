@@ -161,7 +161,7 @@ f = fopen("system_profile.dat","w");
 fprintf(f,"-------------------System profile below------------------\n");
 fprintf(f,"K_B = %lf\nepsilon = %lf\nmass = %lf\ncell_list cutoff = %lf\ndelta_t = %lf\ndamp = %lf\n",K_B,epsilon,mass,cutoff,deltat,damp);
 fprintf(f,"totalN = %d\nsigma = %lf\nlatt const(a) = %lf\nred_rho = %lf\n",totalN,sigma,a,red_rho);
-fprintf(f,"hchi_width = %lf\nhchi_mean = %lf\nhchi_0 = %lf\n",hchi_width,hchi_mean);
+fprintf(f,"hchi_width = %lf\nhchi_mean = %lf\nhchi_0 = %lf\n",hchi_width,hchi_mean,hchi_0);
 fprintf(f,"cell list cutoff = %lf\nTemp = %lf\n",cutoff,red_T);
 fprintf(f,"total MD steps = %d\nPrint freq = %d\ntotal configs generated = %d\n",nsteps,printFreq,nsteps/printFreq);
 // fprintf(f,"k1 = %lf\nk2 = %lf\n",k1,k2); // not used

@@ -18,19 +18,21 @@ double 	sigma		  	= 1.0;
 double   mass        = 1.0;
 double   epsilon     = 1.0;
 // parameters, star quantities-----
-double   red_T       =  0.001;
-double 	red_rho	  	=  1.0;
-double 	cutoff	  	=  3.2;  //|in terms of sigma cutoff cell list. for potentials 
-double 	cutoff_pot	=  2.5;  //|potential cuttoff in terms of sigma cuttoff_pot > 3(cutoff)/2
-double   deltat      =  0.001;
-double   hchi_0      =  0.00;
-double   hchi_mean   =  -0.05;
-double   h_width     =  0.01;
-double   k1          =  1.0;
-double   k2          =  0.5;
-double   damp        =  0.1;
+double   red_T             =  0.001;
+double 	red_rho	  	      =  1.0;
+double   damp              =  0.5;
+double 	cutoff	  	      =  3.2;  //|in terms of sigma cutoff cell list. for potentials 
+double 	cutoff_pot	      =  2.5;  //|potential cuttoff in terms of sigma cuttoff_pot > 3(cutoff)/2
+double   hchi_0            =  0.00;
+double   hchi_mean         =  -0.01;
+double   hchi_width        =  0.006;
+int      h_step_intrvl     =  10000;
+double   h_step            =  0.02; //|final hchi_0 = (nteps/h_step_intrvl)*h_ramp_step, plot change time = h_step_intrvl/print_freq
+double   deltat            =  0.001;
+double   k1                =  1.0;  //| not being used if potential is not ntwrk
+double   k2                =  0.5;  //| not being used if potential is not ntwrk
 //-----integration parameters-------
-int 		nsteps	  	= 1000000;      //|no of verlet iterations
+int 		nsteps	  	= 600000;      //|no of verlet iterations
 int	 	printFreq  	= 100;         //|print freq to write data in files
 int 	 	part_id	   = 10;			   //|	2*part_id + 2;
 int 		totalN 	  	=  484;        //|   totalN = 2*part_id + 2;
