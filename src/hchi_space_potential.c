@@ -23,6 +23,8 @@ void spatial_random_h(const gsl_rng *ran3){
 	double std_a=1;
 		for(i=0;i<totalN;i++){
 			std_a = (gsl_ran_gaussian_ziggurat(ran3, hchi_width) + hchi_mean);
+			// std_a = (gsl_rng_uniform(ran3)-1)*(-hchi_mean);
+
 			p[i].h_xy	= std_a;
 		}
 }

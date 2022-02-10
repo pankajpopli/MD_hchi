@@ -29,9 +29,9 @@ int main(){
    r1 = gsl_rng_alloc (type);
    r2 = gsl_rng_alloc (type);
    r3 = gsl_rng_alloc (type);
-   gsl_rng_set (r1, rand());
-   gsl_rng_set (r2, rand());
-   gsl_rng_set (r3, rand());
+   gsl_rng_set (r1, 3454);
+   gsl_rng_set (r2, 7648);
+   gsl_rng_set (r3, 8903);
 
 /*::::::::::::::::::::::::::::::::::::::::::::::::initialization::::::::::::::::::::::::::::::::::::::::::::::::*/
 	/*order matters */
@@ -98,7 +98,7 @@ int main(){
                
             // increase hchi_0 at every 10000 sim steps
             // therefore in data files, hchi_0 will increase at each 100th  step
-               if(i<(500000)){
+               if(hchi_0<(0.99999999)){
                   if(i%h_step_intrvl==0){
                      hchi_0 += h_step;
                      // if(hchi_counter==0){

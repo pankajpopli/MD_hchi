@@ -20,14 +20,14 @@ double   epsilon     = 1.0;
 // parameters, star quantities-----
 double   red_T             =  0.001;
 double 	red_rho	  	      =  1.0;
-double   damp              =  0.5;
+double   damp              =  5.0;
 double 	cutoff	  	      =  3.2;  //|in terms of sigma cutoff cell list. for potentials 
 double 	cutoff_pot	      =  2.5;  //|potential cuttoff in terms of sigma cuttoff_pot > 3(cutoff)/2
 double   hchi_0            =  0.00;
-double   hchi_mean         =  -0.01;
-double   hchi_width        =  0.006;
-int      h_step_intrvl     =  10000;
-double   h_step            =  0.02; //|final hchi_0 = (nteps/h_step_intrvl)*h_ramp_step, plot change time = h_step_intrvl/print_freq
+double   hchi_mean         =  -0.0015;
+double   hchi_width        =  0.0005;
+int      h_step_intrvl     =  5000;
+double   h_step            =  0.1; //|final hchi_0 = (nteps/h_step_intrvl)*h_ramp_step, plot change time = h_step_intrvl/print_freq
 double   deltat            =  0.001;
 double   k1                =  1.0;  //| not being used if potential is not ntwrk
 double   k2                =  0.5;  //| not being used if potential is not ntwrk
