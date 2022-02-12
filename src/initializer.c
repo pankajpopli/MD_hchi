@@ -164,6 +164,7 @@ fprintf(f,"totalN = %d\nsigma = %lf\nlatt const(a) = %lf\nred_rho = %lf\n",total
 fprintf(f,"hchi_width = %lf\nhchi_mean = %lf\nhchi_0 = %lf\n",hchi_width,hchi_mean,hchi_0);
 fprintf(f,"cell list cutoff = %lf\nTemp = %lf\n",cutoff,red_T);
 fprintf(f,"total MD steps = %d\nPrint freq = %d\ntotal configs generated = %d\n",nsteps,printFreq,nsteps/printFreq);
+fprintf(f,"h_step_interval = %d\nh_step = %lf\n",h_step_intrvl,h_step);
 // fprintf(f,"k1 = %lf\nk2 = %lf\n",k1,k2); // not used
 fclose(f);
 }
