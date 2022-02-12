@@ -3,9 +3,11 @@
 .vscode
 **/.vscode
 results
+results.zip
 **/results
 obj
 **/obj
 keep_results
 **/keep_results
 keep_results.zip
+
