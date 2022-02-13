@@ -25,7 +25,7 @@ double 	cutoff	  	      =  3.2;  //|in terms of sigma cutoff cell list. for pote
 double 	cutoff_pot	      =  2.5;  //|potential cuttoff in terms of sigma cuttoff_pot > 3(cutoff)/2
 double   hchi_0            =  0.00;
 double   hchi_mean         =  -0.0016;
-double   hchi_width        =  0.95;
+double   hchi_width        =  0.6;
 int      h_step_intrvl     =  5000;
 double   h_step            =  0.1; //|final hchi_0 = (nteps/h_step_intrvl)*h_ramp_step, plot change time = h_step_intrvl/print_freq
 double   deltat            =  0.001;
