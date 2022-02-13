@@ -54,7 +54,7 @@ int main(){
       remove("log");
       mkdir("time",0777);
       f2 = fopen("log","a");
-      fprintf(f2,"#step\tTemp\tKE\tPE\tTE\tX/N\n");
+      fprintf(f2,"#step\tPE\tTemp\tTE\tX/N\th_0\n");
       printf(GRN"\n doing MD simulation (N=%d, V=%lf, T=%lf) Total steps = %d with printf freq = %d \n\n"RESET,totalN,lbox_x*lbox_y,red_T,nsteps,printFreq);
       printf(YEL"final hchi_0 = %lf, plot change time = %d\n\n"RESET, (nsteps/h_step_intrvl)*h_step,h_step_intrvl/printFreq);
    //-------------------real thing start here--------------------------------------------->>
@@ -150,7 +150,7 @@ int main(){
                   pe = (c_list_totalE("newCord"))/totalN;
                   ke=calc_Temp();
                   globalX = X()/totalN;
-                  fprintf(f2,"%d\t% .8lf\t% .8lf\t% .8lf\t% .8lf\n",i/printFreq, ke,pe,pe+ke,globalX);
+                  fprintf(f2,"%d\t% .8lf\t% .8lf\t% .8lf\t% .8lf\t% .8lf\n",i/printFreq, pe,ke,pe+ke,globalX,hchi_0);
                   fflush(f2);
                   //-------------------Write config in a file-------------------------------------->>
                      sprintf(filename,"./time/new_cordinates_%d.dat",i/printFreq);

@@ -15,5 +15,6 @@ do
    cp results/* results_in_here/case$cse/width_$width-mean_$mean/
    cd results_in_here/case$cse/width_$width-mean_$mean/ #in case/width... folder
    nohup ./rolat.out &
+   #wait
    cd ../../../ # in MD_hchi folder
 done
