@@ -59,10 +59,10 @@ void generate_latt()
 // }
 /////////////////////////////////////////////////////////////////////////////////
 
-typedef struct Nbour{
-		double r[2];
-}nbour;
-nbour nn[];
+//typedef struct Nbour{
+//		double r[2];
+//}nbour;
+//nbour nn[];
 
 
 

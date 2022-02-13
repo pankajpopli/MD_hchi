@@ -96,7 +96,7 @@ extern int		ncell_x, ncell_y, ncell, c_list[], *clen, *cbgn, c_updt;
 //[3] constants for pointer arrays
 extern int pot_slctr,clist_ntwrk_pot_slctr,latt_slctr,h_chi_force_slctr;
 extern int n_list_slctr,updtChi_slctr,dchi_slctr,initYmat_slctr,Xfull_slctr;
-extern char glatt[50],gpot[50],latt_type[50];
+extern char glatt[500],gpot[500],latt_type[50];
 //[4] constants for integrator
 extern double deltat,mass,damp,eta,stdDev;
 //[5] constants for vchk model
