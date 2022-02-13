@@ -24,8 +24,8 @@ double   damp              =  5.0;
 double 	cutoff	  	      =  3.2;  //|in terms of sigma cutoff cell list. for potentials 
 double 	cutoff_pot	      =  2.5;  //|potential cuttoff in terms of sigma cuttoff_pot > 3(cutoff)/2
 double   hchi_0            =  0.00;
-double   hchi_mean         =  -0.03;
-double   hchi_width        =  0.002;
+double   hchi_mean         =  -0.05;
+double   hchi_width        =  0.0;
 int      h_step_intrvl     =  5000;
 double   h_step            =  0.1; //|final hchi_0 = (nteps/h_step_intrvl)*h_ramp_step, plot change time = h_step_intrvl/print_freq
 double   deltat            =  0.001;

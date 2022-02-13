@@ -1,10 +1,12 @@
-IDIR=../include
+IDIR=include
+ODIR=obj
+LDIR=lib
+SRC=src
+
+$(shell   mkdir -p $(ODIR))
+
 CC=gcc
 CFLAGS=-I$(IDIR) -O3 -ffast-math
-
-ODIR=../obj
-LDIR =../lib
-
 LIBS=-lm -lgsl -lgslcblas
 #-I/usr/include/gsl -L/usr/lib 
 
@@ -17,7 +19,7 @@ _OBJ = main_MD.o cell_list.o generate_latt2.o global.o initializer.o n_list_stat
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 
-$(ODIR)/%.o: %.c $(DEPS)
+$(ODIR)/%.o: $(SRC)/%.c $(DEPS)
 	$(CC) -c -o $@ $< $(CFLAGS)
 
 rolat.out: $(OBJ)
@@ -31,8 +33,8 @@ clean:
 	
 
 install:
-	rm -rf ../results/
-	mkdir -p ../results
-	cp ../lib/p_of_chi_square.c ../results/
-	cp ../lib/live_plot.gnu ../results/
-	mv rolat.out ../results/
+	rm -rf results/
+	mkdir -p results
+	cp lib/p_of_chi_square.c results/
+	cp lib/live_plot.gnu results/
+	mv rolat.out results/
